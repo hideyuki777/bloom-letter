@@ -1,0 +1,16 @@
+body{margin:0;font-family:'Yu Mincho',serif;background:#faf6ef;color:#3b342d}
+.page{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+.intro,#result{max-width:420px;width:100%;text-align:center;animation:fade .9s}
+.mark{font-size:28px;color:#b89a5e}
+h1{font-size:54px;color:#b89a5e;margin:10px 0}
+.names{letter-spacing:4px;color:#8b8175}
+.lead{line-height:2;font-size:18px;margin:35px 0}
+button{padding:15px 28px;border-radius:40px;border:1px solid #b89a5e;background:white;color:#b89a5e;font-size:16px;cursor:pointer}
+.hint,.thanks{color:#9c9183;font-size:13px;margin-top:18px}
+.hidden{display:none}
+#result img{width:100%;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.15);animation:card 1s}
+#petals{position:fixed;inset:0;pointer-events:none}
+.petal{position:absolute;top:-20px;animation:fall 1.8s linear forwards;color:#e6b8c7}
+@keyframes fall{to{transform:translateY(110vh) rotate(180deg);opacity:0}}
+@keyframes card{from{opacity:0;transform:scale(.95) translateY(20px)}to{opacity:1;transform:scale(1)}}
+@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
