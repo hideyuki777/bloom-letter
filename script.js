@@ -1,22 +1,18 @@
-const params = new URLSearchParams(window.location.search);
-const flower = (params.get("flower") || "A").toUpperCase();
-
-const allowed = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N"];
-
-const intro = document.getElementById("intro");
-const result = document.getElementById("result");
-const openBtn = document.getElementById("openBtn");
-const flowerImage = document.getElementById("flowerImage");
-
-if (!allowed.includes(flower)) {
-  document.body.innerHTML = '<main class="page"><p class="error">URLの末尾を確認してください。<br>例：?flower=A</p></main>';
-} else {
-  flowerImage.src = `images/${flower}.jpg`;
-
-  openBtn.addEventListener("click", () => {
-    intro.style.display = "none";
-    result.classList.remove("hidden");
-    result.classList.add("show");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+const p=new URLSearchParams(location.search);
+const f=(p.get('flower')||'A').toUpperCase();
+document.getElementById('flowerImage').src='images/'+f+'.jpg';
+openBtn.onclick=()=>{
+ const c=document.getElementById('petals');
+ for(let i=0;i<20;i++){
+  const s=document.createElement('span');
+  s.className='petal';s.textContent='❀';
+  s.style.left=Math.random()*100+'vw';
+  s.style.fontSize=(14+Math.random()*12)+'px';
+  s.style.animationDelay=Math.random()*0.4+'s';
+  c.appendChild(s);
+ }
+ setTimeout(()=>{
+  intro.style.display='none';
+  result.classList.remove('hidden');
+ },500);
+};
